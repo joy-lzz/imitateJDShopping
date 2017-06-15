@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /* 创建indexedDB数据库 -- store（表） */
+
+        /* 1：获得indexedDB对象 -- 配置浏览器兼容性 */
+        window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+        window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+        window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
+        window.IDBCursor = window.IDBCursor || window.webkitIDBCursor || window.msIDBCursor;
+
+        /* 2：定义indexedDb中数据库store的一些配置信息 */
+        var dbInfo = {
+            dbName: "IndexDB",  // 数据库的名称
+            dbVersion: 2022    // 数据库的版本号
+        };
+
+        /* 3：创建数据库连接 -- open */
+        var dbContent = window.indexedDB.open(dbInfo.dbName, dbInfo.dbVersion);
+
+        /* 3.1: 检测indexedDb是否变换更新 -- 包括store表的增减和某一张store内容的变化 */
+        dbContent.onupgradeneeded = function (e) {
+            console.log(e.target.result);
+        };
+
+        /* 3.2: 数据库连接成功后执行的函数，进行我们一般的数据 增删查改 操作 */
+        dbContent.onsuccess = function (e) {
+            console.log(e.target.result);
+            console.log(e.target.result.objectStoreNames);
+            console.log('数据库连接成功');
+        };
+
+        /* 3.3: 数据库连接失败后执行的函数。*/
+        dbContent.onerror = function (e) {
+
+        };
+
+
+    </script>
+</head>
+<body>
+<h1>indexedDB测试</h1>
+</body>
+</html>

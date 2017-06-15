@@ -1,0 +1,170 @@
+#cart {
+    background-image: none;
+    background-color: #fff;
+}
+
+#cart div, ul, li, h1, h2, h3, img, a {
+    font-family: 'Microsoft Yahei';
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+    color: #666;
+    font-weight: 300;
+}
+
+#cart a {
+    text-decoration: none;
+}
+
+#cart .floatLeft {
+    float: left;
+}
+
+#cart #header {
+    border-color: #b2b2b2;
+    background-image: url("../../img/common/header-bg.png");
+}
+
+#cart .bar .title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#cart #header .head-right {
+    color: #fff;
+    line-height: 34px;
+    text-align: center;
+}
+
+#cart #myCartList .description {
+    white-space: normal;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+#cart #myCartList p {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+#cart #myCartList .myCheck {
+    position: relative;
+    border-bottom:1px solid #ddd;
+}
+
+/* 更改checkbox样式代码 -- 实现原理：用一个label标签绑定对应checkbox -- 对label进行样式修饰 */
+#cart .chk_1 {
+    display: none;
+}
+
+#cart .chk_1 + label {
+    background-color: #FFF;
+    border: 1px solid #C1CACA;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 9px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -16px;
+    width: 26px;
+    height: 26px;
+    z-index: 3;
+}
+
+#cart .chk_1 + label:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#cart .chk_1:checked + label {
+    background-color: #ef473a;
+    border: 1px solid #92A1AC;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #243441;
+}
+
+#cart .chk_1:checked + label:after {
+    content: '\2713';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    padding: 1px 0 0 0;
+    vertical-align: text-top;
+}
+
+#cart #myCartList .myCheck .checkbox {
+    margin-top: -16px;
+}
+
+
+#cart #myCartList .myCheck .item {
+    margin-left: 24px;
+    border-left: none;
+}
+
+#cart #myCartList .myCheck .item img {
+    top: 20px;
+}
+
+#cart #myCartList .myCheck .price {
+    font-size: 12px;
+    color: red;
+}
+
+#cart #myCartList .myCheck .price i {
+    font-size: 16px;
+}
+
+#cart #myCartList .myCheck .count {
+    position: absolute;
+    bottom: 14px;
+    right: 10px;
+}
+
+#cart #myCartList .myCheck .floatLeft {
+    border: 1px solid #b3b3b3;
+    width: 26px;
+    height: 22px;
+    margin-left: -1px;
+    text-align: center;
+    line-height: 18px;
+}
+
+#cart #footer {
+    background-color: #fff;
+    position: absolute;
+    bottom: 49px;
+}
+
+#cart #footer > .selAllTx {
+    text-align: center;
+    line-height: 44px;
+    position: absolute;
+    padding-left: 40px;
+    font-size: 14px;
+    color: #333;
+}
+
+#cart #footer .title {
+    color: #555;
+    font-size: 12px;
+    line-height: 10px;
+    text-align: left;
+    position: absolute;
+    left: 80px;
+}
+
+#cart #footer .title  p:nth-of-type(1) {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}

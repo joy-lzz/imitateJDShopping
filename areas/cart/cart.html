@@ -1,0 +1,46 @@
+<ion-view id="cart" view-title="购物车" cache-view="false">
+    <!--头部-->
+    <header id="header" class="bar bar-header bar-assertive">
+        <div class="title">购物车</div>
+        <button class="head-right button button-icon icon-right ion-navicon"></button>
+    </header>
+    <!-- has-header or has-footer让滚动容器自动调整高度大小 -->
+    <ion-content class="scroll-content  has-header has-footer" scroll="true" scrollbar-y="false">
+        <!-- 购物车列表 -->
+        <div id="myCartList" class="list">
+            <div class="myCheck" ng-repeat="item in obj_goodsInfo track by $index">
+                <input ng-click="func_checked()" id="checkbox{{$index+1}}" ng-model="item.checked" class="chk_1"
+                       type="checkbox"/><label for="checkbox{{$index+1}}"></label>
+                <a class="item item-thumbnail-left" ui-sref="details({goodsId:1})">
+                    <img ng-src="./img/cart/buy-pro1.jpg">
+
+                    <div class="description">{{item.description}}</div>
+                    <p>颜色:{{item.color}};&nbsp;尺寸:{{item.size}}</p>
+                    <span class="price"><i>￥</i>{{item.prise + '.00'}}</span>
+
+                    <div class="count">
+                        <span class="listLeft floatLeft" ng-click="func_subtractOne($event,$index)">-</span>
+                        <input class="floatLeft" type="text" readonly ng-model="item.number">
+                        <span class="listRight floatLeft" ng-click="func_addOne($event,$index)">+</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+    <!-- 底部 -->
+    <div id="footer" class="bar bar-footer">
+        <strong ng-click="func_selectAll($event);func_checked()" class="selAllTx">
+            <input id="selAllCk" class="chk_1" ng-model="flag" type="checkbox"/><label for="selAllCk"></label>
+            全选</strong>
+
+        <div class="title">
+            <p>合计:￥{{totalPricesAndAmount.totalPrices}}</p><br>
+
+            <p>总额:￥{{totalPricesAndAmount.totalPrices}}&nbsp;&nbsp;已优惠:￥0.00</p>
+        </div>
+        <button class="button button-assertive" aria-disabled="true">
+            去结算（{{totalPricesAndAmount.amount}}）
+        </button>
+    </div>
+
+</ion-view>
